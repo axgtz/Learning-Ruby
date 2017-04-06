@@ -37,10 +37,18 @@ end until $count_until < 0
 =begin
 For Loop, se usa ".." para hacer un inclusive range, en donde se incluyen los numeros 0 y 100
 Si se quiere usar la i para imprimir se tienen que poner {}, porque se usa una variable local, tambien con una constante
+No crea un local scope, en pocas palabras la i dentro del loop, se puede usar afuera
 =end
 puts "\nFor loop"
+
 for i in 0..10
   puts "#{i}"
 end
 
 #El operador ... excluye el ultimo numero pero si incluye el primero
+#El each iterator si crea su local scope, la i dentro, no se puede usar afuer a de each
+puts "\n each do loop"
+
+(-3...3).each do |j|#Las barras || delinian que cada valor dentro del rango va a ser asignado a "j"
+  puts"#{j}"
+end
