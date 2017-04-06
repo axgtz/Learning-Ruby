@@ -8,3 +8,7 @@ puts "Favor de escribir su nombre abajo"
 #Input de user#
 name = gets
 puts "Hello, " + name
+
+#En la terminal se pueden probar cosas de ruby, ej:  $ rb --simple-prompt #
+
+#Ademas estan los tipos de datos: string, float, int#
