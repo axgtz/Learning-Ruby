@@ -30,17 +30,46 @@ class Line
     @start, @end = p1, p2
 
     #Distancia entre 2 puntos
-    @dx = @start.getX - @end.getX #Distancia de X
-    @dy = @start.getY - @end.getY #Distancia de Y
+    @dx = Math.sqrt((@start.getX - @end.getX)**2) #Distancia de X, se sube a potencia de dos y se saca la raiz para que todos los numeros sean positivos, pero no es eficiente
+    @dy = Math.sqrt((@start.getY - @end.getY)**2) #Distancia de Y
   end
 
-  #HAce uso del teorema de pitagoras
+  #Getters
+  def getDX() @dx end
+  def getDY() @dy end
+
+  #Hace uso del teorema de pitagoras
   def length
     Math.sqrt(@dx**2 + @dy**2 )
   end
 
   def slope
-    @dy/@dx
+    if @dx == 0 then
+      puts "La pendiente no esta definida, ya que la distancia de x es cero"
+    else#En teoria no deberia usar rescue porque se checa la probabilidad antes, solo esta para mostrar como se usa
+      #rescue sirve para evitar errores, en este caso evita que se divida entre 0
+      @dy/@dx rescue puts "Slope es undefined, y podria ser 0 y el slope se vuelve infinito"
+    end
   end
 
-end 
+end
+
+#Instanciar clases
+point1 = Point.new(3,2)
+point2 = Point.new(3,0)
+
+line = Line.new(point1,point2)
+
+puts "Line from #{point1.to_s} to #{point2.to_s}"
+
+puts "Longtud de componente X: #{line.getDX}"
+puts "Longtud de componente Y: #{line.getDY}"
+
+puts "Slope: #{line.slope}"
+puts "Total Length: #{line.length}"
+
+#change point1, pero linea no cambia, se tendria que hacer una nueva linea para adaptar los cambios en punto
+point1.setX(4)
+point1.setY(5)
+
+puts "Line from #{point1.to_s} to #{point2.to_s}"
