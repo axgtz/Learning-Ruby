@@ -1,3 +1,4 @@
+#Ruby File totorial Classes and instance of classes in other classes
 class Point
   #Attributes with the single @ are protected in classes, it means same as in java or c++, as only accessesd by class and subclass
 
