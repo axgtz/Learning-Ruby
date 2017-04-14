@@ -9,8 +9,8 @@ class Point
   #Las variables de instancia siempre estan protegidos
 
   #Otro estilo de getters, metodo solo permite lectura
-  attr_reader:x   #Ahora se puede acceder al atributo x con .x
-  attr_reader:y   #Regresa lo que y contenga
+  attr_reader:x  #Ahora se puede acceder al atributo x con .x
+  attr_reader:y  #Regresa lo que y contenga
 
   #Otro tipo de setter, solo permite escritura
   attr_writer:x   # .x = ?
