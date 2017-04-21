@@ -21,9 +21,9 @@ r = Rectangle.new(2,4)
 
 puts "Area = #{r.area}, Perimenter = #{r.perimeter}"
 puts "#{r.to_s}"
-=end
 
-#"is a " = rectangle, square is a retangle
+# "<" means "is a " = rectangle, square is a retangle
+=end
 
 #Square inherits from rectangle
 class Square < Rectangle #Square recieves the rectangle as its parent
@@ -33,7 +33,7 @@ class Square < Rectangle #Square recieves the rectangle as its parent
 
   #Overrides the definition of perimiter of the father
   def perimeter
-    4*@w
+    4*@width
   end
 end
 
