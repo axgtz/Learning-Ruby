@@ -1,11 +1,13 @@
-#Ruby File totorial Classes and instance of classes in other classes
+#Ruby File tutorial Classes and instance of classes in other classes
 class Point
   #Attributes with the single @ are protected in classes, it means same as in java or c++, as only accessesd by class and subclass
 
-  #Constructor, initialize es un metodo especial
+  #Constructor, initialize es un metodo especial, es protected
   def initialize(x,y)
     @x,@y = x, y
   end
+
+  #Los metodos pueden ser private, protected o public, por default son public excepto por el constructor
 
   #Getters, one way to define it:
   def getX() @x end
@@ -55,8 +57,9 @@ class Line
 
 end
 
-#Instanciar clases
+#Instanciar clases, en ruby el objeto tambien es llamado reciever o message reciever
 point1 = Point.new(3,2)
+#point2 es llamado un explicit reciever
 point2 = Point.new(3,0)
 
 line = Line.new(point1,point2)
@@ -71,6 +74,7 @@ puts "Total Length: #{line.length}"
 
 #change point1, pero linea no cambia, se tendria que hacer una nueva linea para adaptar los cambios en punto
 point1.setX(4)
+#En ruby no se invocan los metodos sino se les envia un mensaje al objeto con los parametros
 point1.setY(5)
 
 puts "Line from #{point1.to_s} to #{point2.to_s}"
