@@ -31,14 +31,18 @@ class Square < Rectangle #Square recieves the rectangle as its parent
     super(side, side)#Llamando a super, llamas al constructor de la clase padre
   end
 
-  #Overrides the definition of perimiter of the father
+  #Overrides the definition of perimiter of the parent
   def perimeter
-    4*@width
+    4*@width     #@width se hereda del parent
   end
 end
 
-sq = Square.new(3)
+rect = Rectangle.new(4,3)
+puts "RECTANGLE"
+puts "Area: #{rect.area}"
+puts "Perimeter: #{rect.perimeter}"
 
-puts "#{sq.perimeter}"
-
-#not working
+sq = Square.new(5)
+puts "\nSQUARE"
+puts "Area: #{sq.area}"
+puts "Perimeter: #{sq.perimeter}"
